@@ -26,3 +26,6 @@ colors_list = ['#fad6a5', '#FBCEB1', '#e9967a', '#fd5e53', '#e34234']
 plt = df['median_house_value'].plot.pie(startangle = 45, autopct = '%1.1f%%', explode = my_explode, 
                                         figsize = (12, 8), colors = colors_list, labels = df.ocean_proximity, 
                                         title = 'Median Cost of House')
+
+px.scatter(housing, x = 'longitude', y = 'latitude', 
+                 color = 'ocean_proximity')
