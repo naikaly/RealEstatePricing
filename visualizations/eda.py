@@ -29,3 +29,9 @@ plt = df['median_house_value'].plot.pie(startangle = 45, autopct = '%1.1f%%', ex
 
 px.scatter(housing, x = 'longitude', y = 'latitude', 
                  color = 'ocean_proximity')
+
+# Set up the matplotlib figure
+f, ax = plt.subplots(figsize = (12, 8))
+sns.heatmap(pd.DataFrame(housing.isna().sum()), annot = True, fmt = 'd', cmap = 'Pastel1')
+plt.title('Amount Of Missing Values', fontsize = 15)
+plt.show()
