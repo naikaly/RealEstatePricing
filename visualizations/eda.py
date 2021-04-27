@@ -27,6 +27,16 @@ plt = df['median_house_value'].plot.pie(startangle = 45, autopct = '%1.1f%%', ex
                                         figsize = (12, 8), colors = colors_list, labels = df.ocean_proximity, 
                                         title = 'Median Cost of House')
 
+corr_plot = housing.corr()
+
+# Generate a mask for the upper triangle
+mask = np.triu(np.ones_like(corr_plot, dtype = bool))
+
+# Set up the matplotlib figure
+f, ax = plt.subplots(figsize = (12, 8))
+
+sns.heatmap(corr_plot, annot = True, mask = mask, cmap = 'bone')
+
 px.scatter(housing, x = 'longitude', y = 'latitude', 
                  color = 'ocean_proximity')
 
