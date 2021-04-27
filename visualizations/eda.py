@@ -29,19 +29,23 @@ plt = df['median_house_value'].plot.pie(startangle = 45, autopct = '%1.1f%%', ex
 
 corr_plot = housing.corr()
 
-# Generate a mask for the upper triangle
+# Upper triangle
 mask = np.triu(np.ones_like(corr_plot, dtype = bool))
 
 # Set up the matplotlib figure
 f, ax = plt.subplots(figsize = (12, 8))
 
-sns.heatmap(corr_plot, annot = True, mask = mask, cmap = 'bone')
+sns.heatmap(corr_plot, annot = True, 
+            mask = mask, cmap = 'bone')
 
 px.scatter(housing, x = 'longitude', y = 'latitude', 
                  color = 'ocean_proximity')
 
 # Set up the matplotlib figure
 f, ax = plt.subplots(figsize = (12, 8))
-sns.heatmap(pd.DataFrame(housing.isna().sum()), annot = True, fmt = 'd', cmap = 'Pastel1')
-plt.title('Amount Of Missing Values', fontsize = 15)
+
+sns.heatmap(pd.DataFrame(housing.isna().sum()), annot = True, 
+            fmt = 'd', cmap = 'Pastel1')
+
+plt.title('Amount Of Missing Values')
 plt.show()
