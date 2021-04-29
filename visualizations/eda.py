@@ -61,20 +61,29 @@ housing = housing.loc[df['median_house_value'] < 500001,:]
 housing = housing[housing['population'] < 25000]
 
 # converting ocean_proximity to dummies
-housing = pd.concat([pd.get_dummies(housing['ocean_proximity'], drop_first = True), housing], axis = 1).drop('ocean_proximity', axis = 1)
+housing = pd.concat([pd.get_dummies(housing['ocean_proximity'], 
+                   drop_first = True), housing], 
+        axis = 1).drop('ocean_proximity', axis = 1)
+
 housing['income per working population'] = housing['median_income']/(housing['population'] - housing['households'])
 housing['bed per house'] = housing['total_bedrooms']/housing['total_rooms']
 housing['h/p'] = housing['households']/housing['population']
+
 def type_building(x):
     if x <= 10:
         return 'new'
+    
     elif x <= 30:
         return 'mid old'
+    
     else:
         return 'old'
-housing = pd.concat([housing, pd.get_dummies(housing['housing_median_age'].apply(type_building), drop_first = True)], axis = 1)
+
+housing = pd.concat([housing, 
+                     pd.get_dummies(housing['housing_median_age'].apply(type_building), 
+                                             drop_first = True)], axis = 1)
+
 x = housing.drop('median_house_value',axis=1).values
 y = housing['median_house_value'].values
 
-from sklearn.model_selection import train_test_split
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = 0.3, random_state = 0)
