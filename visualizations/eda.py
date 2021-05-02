@@ -31,8 +31,9 @@ colors_list = ['#fad6a5', '#FBCEB1', '#e9967a', '#fd5e53', '#e34234']
 
 plt = df['median_house_value'].plot.pie(startangle = 45, 
                                autopct = '%1.1f%%', explode = my_explode, 
-                                        figsize = (12, 8), colors = colors_list, labels = df.ocean_proximity, 
-                                        title = 'Median Cost of House')
+                                        figsize = (12, 8), colors = colors_list, 
+                                    labels = df.ocean_proximity, 
+                  title = 'Median Cost of House')
 
 corr_plot = housing.corr()
 
@@ -87,10 +88,11 @@ def type_building(x):
         return 'old'
 
 housing = pd.concat([housing, 
-                     pd.get_dummies(housing['housing_median_age'].apply(type_building), 
-                                             drop_first = True)], axis = 1)
+       pd.get_dummies(housing['housing_median_age'].apply(type_building), 
+                             drop_first = True)], axis = 1)
 
 x = housing.drop('median_house_value',axis=1).values
 y = housing['median_house_value'].values
 
-xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = 0.3, random_state = 0)
+xtrain, xtest, ytrain, ytest = train_test_split(x, y, 
+             test_size = 0.3, random_state = 0)
