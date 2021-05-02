@@ -18,18 +18,19 @@ df.plot(ax = axes[0, 1], kind = 'line',
 
 df.plot(ax = axes[1, 0], kind = 'line', 
         x = 'ocean_proximity', y = 'population', 
-        color = '#FFD700', linewidth = 6.5, 
+                  color = '#FFD700', linewidth = 6.5, 
       title = 'Population')
 
 df.plot(ax = axes[1, 1], kind = 'line', x = 'ocean_proximity', y = 'median_income', 
-        color = '#AEC6CF', linewidth = 6.5, 
+               color = '#AEC6CF', linewidth = 6.5, 
     title = 'Median Income of Residents')
 
 #Pie Plot
 my_explode = (0, 0, 0.1, 0, 0)
 colors_list = ['#fad6a5', '#FBCEB1', '#e9967a', '#fd5e53', '#e34234']
 
-plt = df['median_house_value'].plot.pie(startangle = 45, autopct = '%1.1f%%', explode = my_explode, 
+plt = df['median_house_value'].plot.pie(startangle = 45, 
+                               autopct = '%1.1f%%', explode = my_explode, 
                                         figsize = (12, 8), colors = colors_list, labels = df.ocean_proximity, 
                                         title = 'Median Cost of House')
 
