@@ -1,17 +1,23 @@
 #Bar Plot
 housing['ocean_proximity'].value_counts().plot(kind = 'barh', color = '#C8A2C8', 
-                                               title = 'Ocean Proximity', figsize = (12, 8))
+                                               title = 'Ocean Proximity', 
+                             figsize = (12, 8))
 
 #Line Plots
-fig, axes = plt.subplots(nrows = 2, ncols = 2, figsize = (15, 12))
-df.plot(ax = axes[0, 0], kind = 'line', x = 'ocean_proximity', y = 'housing_median_age', 
-        color = '#9AAB89', linewidth = 6.5, title = 'Median Age of Residents')
+fig, axes = plt.subplots(nrows = 2, ncols = 2, 
+                         figsize = (15, 12))
+df.plot(ax = axes[0, 0], kind = 'line', 
+        x = 'ocean_proximity', y = 'housing_median_age', 
+                color = '#9AAB89', linewidth = 6.5, 
+        title = 'Median Age of Residents')
 
-df.plot(ax = axes[0, 1], kind = 'line', x = 'ocean_proximity', y = 'total_rooms', 
-        color = '#FD5E53', linewidth = 6.5, 
+df.plot(ax = axes[0, 1], kind = 'line', 
+        x = 'ocean_proximity', y = 'total_rooms', 
+                  color = '#FD5E53', linewidth = 6.5, 
    title = 'Total Rooms')
 
-df.plot(ax = axes[1, 0], kind = 'line', x = 'ocean_proximity', y = 'population', 
+df.plot(ax = axes[1, 0], kind = 'line', 
+        x = 'ocean_proximity', y = 'population', 
         color = '#FFD700', linewidth = 6.5, 
       title = 'Population')
 
