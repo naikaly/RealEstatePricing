@@ -1,6 +1,6 @@
 #Bar Plot
 housing['ocean_proximity'].value_counts().plot(kind = 'barh', color = '#C8A2C8', 
-                                               title = 'Ocean Proximity', 
+                        title = 'Ocean Proximity', 
                              figsize = (12, 8))
 
 #Line Plots
