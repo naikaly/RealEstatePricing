@@ -1,4 +1,4 @@
-class pipe_f(base, transformer):
+class pipe_f(BaseEstimator, TransformerMixin):
     def __init__(self, bedrooms = True):
         self.bedrooms = bedrooms
     def fit(self, X, y = None):
