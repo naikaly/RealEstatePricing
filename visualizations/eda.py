@@ -1,3 +1,12 @@
+# Plot missing values
+f, ax = plt.subplots(figsize = (12, 8))
+
+sns.heatmap(pd.DataFrame(housing.isna().sum()), annot = True, 
+            fmt = 'd', cmap = 'Pastel1')
+
+plt.title('Amount Of Missing Values')
+plt.show()
+
 #Bar Plot
 housing['ocean_proximity'].value_counts().plot(kind = 'barh', color = '#C8A2C8', 
                         title = 'Ocean Proximity', 
@@ -48,12 +57,3 @@ sns.heatmap(corr_plot, annot = True,
 
 px.scatter(housing, x = 'longitude', y = 'latitude', 
                  color = 'ocean_proximity')
-
-# Set up the matplotlib figure
-f, ax = plt.subplots(figsize = (12, 8))
-
-sns.heatmap(pd.DataFrame(housing.isna().sum()), annot = True, 
-            fmt = 'd', cmap = 'Pastel1')
-
-plt.title('Amount Of Missing Values')
-plt.show()
