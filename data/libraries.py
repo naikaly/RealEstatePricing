@@ -13,9 +13,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import  ElasticNet
 from sklearn.linear_model import  Ridge
 from sklearn.metrics import mean_squared_error
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import  Lasso
-from sklearn.model_selection import GridSearchCV
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
