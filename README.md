@@ -1,3 +1,3 @@
-# California-Real-Estate
+# Real-Estate
 
 A successful data-driven approach can yield powerful insights. Oceanfront mansion is the gold standard. It cannot get better than that. And the direct oceanfront affords you the most land overall, as a rule. People want major estates, and that’s like the crème de la crème. The price ranges around $35 million+. Fabulous beach and fabulous toes in the sand are what people desire the most. California's Real Estate data illustrates various parameters that help predict patterns in the current trend. With the detailed description of the house to it's precise location provided by the exact latitude and longitude, my aim is to predict the house value with the help of optimal regression models. 
